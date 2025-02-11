@@ -23,31 +23,32 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS job_applications (
-    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id uuid REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-    company text NOT NULL,
-    job_title text NOT NULL,
-    status application_status DEFAULT 'saved',
-    application_date date,
-    job_description text,
-    job_url text,
-    salary_min numeric,
-    salary_max numeric,
-    notes text,
-    contact_name text,
-    contact_email text,
-    contact_phone text,
-    created_at timestamptz DEFAULT now(),
-    updated_at timestamptz DEFAULT now()
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id uuid REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+  company text NOT NULL,
+  job_title text NOT NULL,
+  status application_status DEFAULT 'saved',
+  application_date text NOT NULL,
+  job_description text,
+  job_url text,
+  salary_min numeric,
+  salary_max numeric,
+  notes text,
+  contact_name text,
+  contact_email text,
+  contact_phone text,
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now()
 );
 
 CREATE TABLE IF NOT EXISTS resumes (
-    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id uuid REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-    title text NOT NULL,
-    content jsonb NOT NULL,
-    created_at timestamptz DEFAULT now(),
-    updated_at timestamptz DEFAULT now()
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id uuid REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+  profile_title text NOT NULL,
+  resume_description text,
+  resume_url text NOT NULL,
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now()
 );
 
 -- Enable RLS

@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS job_applications (
   company text NOT NULL,
   job_title text NOT NULL,
   status application_status DEFAULT 'saved',
-  application_date date,
+  application_date text NOT NULL,
   job_description text,
   job_url text,
   salary_min numeric,
@@ -39,8 +39,9 @@ CREATE TABLE IF NOT EXISTS job_applications (
 CREATE TABLE IF NOT EXISTS resumes (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id uuid REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-  title text NOT NULL,
-  content jsonb NOT NULL,
+  profile_title text NOT NULL,
+  resume_description text,
+  resume_url text NOT NULL,
   created_at timestamptz DEFAULT now(),
   updated_at timestamptz DEFAULT now()
 );
