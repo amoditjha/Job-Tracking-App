@@ -44,12 +44,11 @@ A comprehensive web application to manage your job search process, track applica
 
 ### Installation
 
-
 1. **Clone the repository**
 - git clone https://github.com/yourusername/job-tracker.git
 cd job-tracker
 
-2.** Install dependencies**
+2.**Install dependencies**
 - npm install
 
 3. **Set up environment variables**
@@ -62,31 +61,21 @@ Create .env file in root directory:
 
 🖥️ Usage
 1.**Sign Up/Login**
-
 - Create an account or login using email/password
 
 2.**Add Job Application**
-
 - Click "+ Add Job" button
-
 - Fill in company details and position
-
 - Upload resume (PDF/DOCX)
 
 3.**Track Progress**
-
 - Update application status through drag-and-drop
-
 - Add interview notes and deadlines
 
 4.**Manage Resumes**
-
 - Upload multiple resume versions
-
 - Search and filter resumes by title
-
 - Download/Delete resumes
 
 5.**Search Jobs**
-
 -Use the search bar to find specific applications
